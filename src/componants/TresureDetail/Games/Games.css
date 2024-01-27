@@ -1,0 +1,117 @@
+.game{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 2rem 0;
+    margin-top: 18rem;
+    transition: 4s;
+}
+
+.game .left{
+    background-color: rgba(68, 185, 9, 0.575);
+    display: grid;
+    grid-template-columns: 49% 49%;
+    text-align: center;
+    gap: 2%;
+    padding: 0.1rem;
+}
+.game p,h1,h3,h2{
+    color: white;
+    opacity: 0.7;
+}
+.game 
+.winner{
+  border-radius:0 2rem 2rem 0 ;
+  background-color: rgb(101, 190, 11);
+  display:grid;
+  grid-template-rows: 10% 60% 10%;
+  gap: 5%;
+  place-items: center;
+  text-align: center;
+  padding: 3rem 0.2rem;
+}
+.game .left img{
+    width: 100%;
+    height: 100%;
+}
+.game .para{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game .right{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 0.5rem;
+}
+.game .right p{
+    padding: 0 
+}
+.game  .question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 0 30%;
+}
+
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+input,textarea{
+    width: 100%;
+    padding: 1.5rem;
+    background-color:transparent;
+    border: 1px solid var(--color-bg-variant);
+    resize: none;
+    border-radius: 0.5rem;
+    color:white;
+
+}
+
+
+
+@media screen and (max-width:600px) {
+
+    .game  .question {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+        padding: 0 ;
+    }
+    
+
+}

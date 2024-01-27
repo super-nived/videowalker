@@ -1,0 +1,18 @@
+.treasure_datails{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    width: 93%;
+    height: 93%;
+    gap: 16px;
+   
+
+}
+
+.treasure_datails img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}

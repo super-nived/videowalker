@@ -1,0 +1,116 @@
+ .fc{
+    width: var(--container-width-lg);
+    margin:auto;
+    margin-top: 7rem;
+    padding: 10px;
+ 
+}
+
+.Uploading__container{
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12%;
+    align-items: center;
+    justify-content: center;
+
+}
+.Uploading__options{
+   
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.conatact__option{
+    background-color:#04082d;
+    text-align: center;
+    border-radius:1.2rem;
+    padding: 1.2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.conatact__option:hover{
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.gmail{
+    font-size: 3.4rem;
+    margin-bottom: 0.5rem;
+    background-color: rgb(221, 200, 172);
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+.whats{
+    font-size: 3.4rem;
+    margin-bottom: 0.5rem;
+    background-color: rgb(18, 228, 32);
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+
+.insta{
+    font-size: 3.4rem;
+    margin-bottom: 0.5rem;
+    background-color: rgb(227, 16, 125);
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+
+.conatact__option a{
+    margin: 0.6rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+
+
+.Uploading__container form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+input,textarea{
+    width: 100%;
+    padding: 1.5rem;
+    background-color:transparent;
+    border: 1px solid var(--color-bg1);
+    resize: none;
+    border-radius: 0.5rem;
+    color:white;
+
+}
+
+.privacy{
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    font-size: 0.5rem;
+    text-align: center;
+}
+.privacy li {
+    display: inline-block;
+ 
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:1024px) {
+   .Uploading__container{
+    grid-template-columns: 1fr;
+    gap: 2rem;
+   }
+  }
+    @media screen and (max-width:600px) {
+      .Uploading__container{
+          width: var(--cotianer-width-sm);
+      
+          
+  }
+
+  } 
