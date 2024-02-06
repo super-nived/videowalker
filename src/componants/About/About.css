@@ -1,5 +1,5 @@
 .categories{
-    background:var(--color-bg1);
+    background: var(--color-bg1);
     height: auto;
     margin-top: 5rem;
 }
@@ -63,7 +63,7 @@
 }
 
 
-v
+
 .category:hover{
     box-shadow: 0 3rem 3rem rgba(0,0,0,0.3);
     z-index: 1;

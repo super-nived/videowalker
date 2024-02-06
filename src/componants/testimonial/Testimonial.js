@@ -3,7 +3,7 @@ import PIC1 from '../../asset/avatar1.jpg'
 import PIC2 from '../../asset/avatar2.jpg'
 import PIC3 from '../../asset/avatar3.jpg'
 import PIC4 from '../../asset/avatar4.jpg'
-import './Testimonials.css'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles

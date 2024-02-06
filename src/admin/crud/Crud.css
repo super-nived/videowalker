@@ -1,0 +1,75 @@
+.about-achievements{
+    margin-top: 3rem;
+   
+}
+
+.about-achievements-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 80%;
+    gap: 5rem;
+}
+
+.about-right p {
+    margin: 1.6rem 0 2.5rem;
+    color: white;
+    opacity: .7;
+}
+
+.achievements-cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+
+.achievement-card{
+    background-color: var(--color-bg1);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+.about-achievements .achievement-card .butons-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+.about-achievements .achievement-card .butons-div button{
+
+    outline: none;
+    color: white;
+    border:1px solid var(--color-bg2);
+    padding: 4px 7px;
+    background: transparent;
+
+}
+.achievement-card:hover{
+    background-color: var(--color-bg2);
+    box-shadow: 0 3rem 3rem rgba(0,0,0,0.3);
+    transition: var(--transition);
+}
+
+.achievement-icon{
+    background-color: var(--color-danger);
+    padding: 0.6rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+
+}
+
+.achievement-card:nth-child(2) .archievement-icon{
+    background: var(--color-success);
+}
+
+.achievement-card:nth-child(3) .archievement-icon{
+    background: greenyellow;
+}
+
+.achievement-card:nth-child(4) .archievement-icon{
+    background: rgb(189, 27, 141);
+}
+

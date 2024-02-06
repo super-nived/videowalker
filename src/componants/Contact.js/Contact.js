@@ -11,20 +11,22 @@ function Contact() {
           <article className='conatact__option'>
             <AiOutlineMail className='gmail'/>
             <h4>Email</h4>
-            <a href="https://info@softentec.com/">send an message</a>
+            <a href="mailto:nivedchandran7@gmail.com?subject=The%20Subject&body=Hi%20Nived,">Send a message</a>
+
           </article>
 
           <article className='conatact__option'>
             <ImWhatsapp className='whats'/>
             <h4>whats up</h4>
-            <a href="https://wa.me/8129701739/?text=Your%20Message%20Here">send an message</a>
+            <a href="https://wa.me/6238117525?text=Hi%20Nived">Send a message</a>
+
           </article>
 
           <article className='conatact__option'>
             <FiInstagram className='insta'/>
             <h4>Instagram</h4>
 
-            <a href="https://www.instagram.com/soften_technologies/">send an message</a>
+            <a href="https://www.instagram.com/super_nived/">send an message</a>
           </article>
         </div>
         <form >

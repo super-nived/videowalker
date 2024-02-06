@@ -19,7 +19,7 @@ function Advertiser() {
       }, 5000);
       try {
         const querySnapshot = await firestore.collection('advertisements')
-          .orderBy('adverticement_price', 'desc')
+          .orderBy('adverticement_price', 'asc')
           .get();
 
         const advertiserData = querySnapshot.docs.map(doc => ({
@@ -27,6 +27,7 @@ function Advertiser() {
           ...doc.data()
         }));
         setAdvertisers(advertiserData);
+        console.log(advertiserData,'lllllllllllllllllllllllllll')
       } catch (error) {
         console.error("Error fetching advertisers:", error);
         setError('Failed to load advertisers.');
@@ -64,7 +65,8 @@ function Advertiser() {
         
        
            {advertisers.map((advertiser) => (
-              <article key={advertiser.id} className='team-member'>
+              <article key={advertiser.id} className='team-member' style={{ border: advertiser && advertiser && advertiser.active === 'yes' && '1px solid white'  }}
+              >>
                 <div className="team-member-image">
                   <img src={advertiser.company_image} alt={advertiser.company_name} />
                 </div>

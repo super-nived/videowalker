@@ -43,15 +43,14 @@ function Header() {
 
                     </h1>
                     <p className='large-p'>
-
-                    Take a break, discover hidden treasure. Find its location and turn your luck into amazing rewards. Begin your adventure now!
+                    Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift!
 
                     </p>
                     <p className='small-p' >
 
-                    Take a break, discover hidden treasure. Find its location and turn your luck into amazing rewards. Begin your adventure now!
+                    Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift!
                     </p>
-                    <a href='#' className='btn btn-primary'><Link to='/tresuredetails'>Find Treasure</Link></a>
+                    <a href='#' className='btn btn-primary'><Link to='/tresuredetails'>SECREAT CODE</Link></a>
                 </div>
                 <div className="header-right">
                     <div className="header-image">

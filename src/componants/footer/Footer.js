@@ -11,7 +11,7 @@ function Footer() {
          <div className="container footer-container">
             <div className="footer-1">
                 <a href='index.html' ><h4>video walker </h4></a>
-                <p>lorelkwerkwefwlekrj sdkfjfsdlkjfasdkf sdfsdkf fd fasdlkjf fsd dffaslkdf
+                <p>take a break and turn your your luck in to gift just do it 
                
                 </p>
             </div>
@@ -20,7 +20,7 @@ function Footer() {
                <ul className='permalinks'>
             <li><a ><Link to = '/'>HOME</Link></a></li>
             <li><a><Link to='/about'>ABOUT</Link></a></li>
-            <li><a><Link to='/'>COURSE</Link></a></li>
+            <li><a><Link to='/'>Advertiser</Link></a></li>
             <li><a><Link to='/'>CONTACT</Link></a></li>
                </ul>
             </div>
@@ -28,11 +28,11 @@ function Footer() {
             <div className="footer-4">
                 <h4>CONTACT-US</h4>
                 <div>
-                    <p>98654321</p>
-                    <p>softern@gmail.com</p>
+                    <p>6238117525</p>
+                    <p>nivedchandran7@gmail.com</p>
                     <ul className='socials'>
-                    <li><a href="https:videowalker.com/"><AiOutlineMail></AiOutlineMail></a></li>
-                    <li><a href="https://wa.me/6238117525/?text=Your%20Message%20Here"><ImWhatsapp></ImWhatsapp></a></li>
+                    <li><a href="mailto:nivedchandran7@gmail.com?subject=The%20Subject&body=Hi%20Nived,"><AiOutlineMail></AiOutlineMail></a></li>
+                    <li> <a href="https://wa.me/6238117525?text=Hi%20Nived"><ImWhatsapp></ImWhatsapp></a></li>
                     <li><a href="https://www.instagram.com/super_nived/"><FiInstagram></FiInstagram></a></li>
                 </ul>
                 </div>

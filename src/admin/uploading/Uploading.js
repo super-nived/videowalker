@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { storage,firestore } from '../../firebase/firebase';
+import { storage, firestore } from '../../firebase/firebase';
 
 import "./Uploading.css";
 
 function Uploading() {
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
+  const optionStyle = {
+    width: '100%',
+    padding: '1.5rem',
+    backgroundColor: 'transparent',
+    border: '1px solid var(--color-bg1)', // This might not work as expected
+    resize: 'none',
+    borderRadius: '0.5rem',
+    color: 'white',
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -49,8 +58,13 @@ function Uploading() {
         <input name='company_image' type="file" />
         <input name='adverticement_price' type="number" placeholder='advertisement price' />
         <hr />
-        <input name='treasure_image' type="file" />
+        <input name='treasure_task' type='text' placeholder='task' />
         <input name='treasure_location' type="text" placeholder='treasure location' />
+        <input type="datetime-local" id="targetTime" name="targetTime" required />
+        <select name="active" required>
+           <option style={optionStyle} className="option" value="yes">Yes</option>
+           <option style={optionStyle} className="option" value="no">No</option>
+        </select> 
         <textarea name="content" placeholder='text your message' required></textarea>
         <button className='btn btn-primary' type="submit" disabled={loading}>
           {loading ? 'Uploading...' : 'Send Message'}

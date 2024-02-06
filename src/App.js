@@ -9,6 +9,9 @@ import Game from './pages/About';
 import Admin from './pages/Admin';
 import AdvertiserPage from './pages/Advertiser';
 import TresureDetails from './pages/TresureDetails';
+import AdminEdit from './pages/AdminEdit';
+import Updating from './admin/crud/Update';
+import { TimeOverProvider } from './context/Context';
 
 
 
@@ -16,6 +19,7 @@ function App() {
   return (
 
     <div className="App">
+        <TimeOverProvider>
        <BrowserRouter>    
        {/* <ScrollToTop> */}
         <Routes>
@@ -26,9 +30,12 @@ function App() {
           <Route path='/contact' element={<Cnt/>}></Route> 
           <Route path='/game' element={<Game/>}></Route> 
           <Route path='/admin' element={<Admin></Admin>}></Route> 
+          <Route path='/Crud' element={<AdminEdit></AdminEdit>}></Route> 
+          <Route path='/update/:documentId' element={<Updating></Updating>}></Route> 
         </Routes>
         {/* </ScrollToTop>   */}
       </BrowserRouter>
+      </TimeOverProvider>
     </div>
 
   );

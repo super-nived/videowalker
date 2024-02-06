@@ -6,6 +6,7 @@ import {SiJavascript} from 'react-icons/si'
 import {SiDotnet} from 'react-icons/si'
 import {TbBrandPhp} from 'react-icons/tb'
 import './About.css'
+import { Link } from 'react-router-dom'
 
 
 function About() {
@@ -26,7 +27,8 @@ function About() {
             <h3>Flexible and Growing Daily</h3>
 
             <p>Start advertising with us from as little as 10 rupees. You have the freedom to set your advertisement price above the previous day's rate, allowing you to choose how much to invest based on your budget and advertising goals. This flexible approach guarantees that the platform evolves daily, with the potential for rewards growing alongside the advertisement value.</p>
-            <a href='https://wa.me/8129701739/?text=Your%20Message%20Here' className='btn'> Learn More</a>
+            {/* <a href='https://wa.me/8129701739/?text=Your%20Message%20Here' className='btn'> Learn More</a> */}
+            <Link className='btn' to='/tresuredetails'>JUST START</Link>
             </div> 
             {/* <div className="category-right">
 
