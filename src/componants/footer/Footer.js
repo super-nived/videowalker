@@ -20,8 +20,8 @@ function Footer() {
                <ul className='permalinks'>
             <li><a ><Link to = '/'>HOME</Link></a></li>
             <li><a><Link to='/about'>ABOUT</Link></a></li>
-            <li><a><Link to='/'>Advertiser</Link></a></li>
-            <li><a><Link to='/'>CONTACT</Link></a></li>
+            <li><a><Link to='/advertisers'>Advertiser</Link></a></li>
+            <li><a><Link to='/contact'>CONTACT</Link></a></li>
                </ul>
             </div>
         

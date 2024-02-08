@@ -32,6 +32,7 @@ function App() {
           <Route path='/admin' element={<Admin></Admin>}></Route> 
           <Route path='/Crud' element={<AdminEdit></AdminEdit>}></Route> 
           <Route path='/update/:documentId' element={<Updating></Updating>}></Route> 
+          
         </Routes>
         {/* </ScrollToTop>   */}
       </BrowserRouter>

@@ -14,7 +14,7 @@ function Nav () {
        <div className="container nav-container">
         <div className='logo'><h4>video walker</h4></div>
         
-        <Link to ='/game'><button className='game-button'>$20</button></Link>
+        {/* <Link to ='/game'><button className='game-button'>$20</button></Link> */}
         <ul className={state ? `nav-menu ${'show'}` : 'nav-menu'}>
             <li><a ><Link to = '/'>HOME</Link></a></li>
             <li><a><Link to='/about'>ABOUT</Link></a></li>

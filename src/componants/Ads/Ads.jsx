@@ -3,7 +3,7 @@ import { firestore } from '../../firebase/firebase';
 import Loading from '../Loading/Loading';
 import Nodata from '../nodata/Nodata';
 import './Ads.css';
-import CountdownTimer from "./NoData/NoData";
+import CountdownTimer from "./NoData/CountDown";
 import { useTimeOver } from "../../context/Context";
 
 const Ads = () => {
@@ -53,11 +53,13 @@ const Ads = () => {
   if (error) {
     return <div className="error-message" style={{ width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Error: {error}</div>;
   }
-
+  if(isLoading){
+    <Loading></Loading>
+  }
   if (!isTimeOver) {
     return <CountdownTimer />;
   }
-  if (advertisers.length == 0 ){
+  if (advertisers.length == 0 &&  !isLoading  ){
     return <Nodata></Nodata>
   }
   return (

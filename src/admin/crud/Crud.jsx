@@ -8,7 +8,7 @@ import Loading from '../../componants/Loading/Loading';
 import { firestore } from '../../firebase/firebase';
 import Nodata from '../../componants/nodata/Nodata';
 import { useNavigate } from 'react-router-dom';
-import CountdownTimer from '../../componants/Ads/NoData/NoData';
+import CountdownTimer from '../../componants/Ads/NoData/CountDown';
 
 function Crud() {
     const [documents, setDocuments] = useState([]);

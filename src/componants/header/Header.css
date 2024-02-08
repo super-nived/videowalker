@@ -20,6 +20,7 @@ header{
 }
 .header-container .header-left a {
   margin: 1rem;
+  border-radius: 5px;
 }
 header img{
   height: 80%;

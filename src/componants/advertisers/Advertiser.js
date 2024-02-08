@@ -66,7 +66,7 @@ function Advertiser() {
        
            {advertisers.map((advertiser) => (
               <article key={advertiser.id} className='team-member' style={{ border: advertiser && advertiser && advertiser.active === 'yes' && '1px solid white'  }}
-              >>
+              >
                 <div className="team-member-image">
                   <img src={advertiser.company_image} alt={advertiser.company_name} />
                 </div>

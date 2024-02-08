@@ -1,13 +1,15 @@
+// Import necessary dependencies and components
 import React, { useState, useEffect } from 'react';
 import { firestore } from '../../../firebase/firebase';
 import PIC from '../../../asset/boy.png';
-import './NoData.css'
+import './CountDown.css';
 import { useTimeOver } from '../../../context/Context';
-function CountdownTimer({}) {
+import Loading from '../../Loading/Loading';
+
+function CountdownTimer() {
   const [targetTime, setTargetTime] = useState(null);
   const [countdown, setCountdown] = useState('');
-  // Get the image URL from local storage or use default
-  const image = localStorage.getItem('Image') || PIC;
+  const [loading, setLoading] = useState(true);
   const { isTimeOver, setTimeOver } = useTimeOver();
 
   useEffect(() => {
@@ -17,35 +19,27 @@ function CountdownTimer({}) {
                                              .where('active', '==', 'yes')
                                              .limit(1)
                                              .get();
-  
+
         if (!querySnapshot.empty) {
           const doc = querySnapshot.docs[0];
           if (doc.exists) {
             const data = doc.data();
-  
-            // Check if targetTime exists in the document
+
             if (data.hasOwnProperty('targetTime')) {
               let targetTime = data.targetTime;
-  
-              // Handle Firestore Timestamp
+
               if (targetTime && typeof targetTime.toDate === 'function') {
                 setTargetTime(new Date(targetTime.toDate()));
-              } 
-              // Handle UNIX timestamp (number)
-              else if (targetTime && !isNaN(targetTime)) {
-                setTargetTime(new Date(targetTime * 1000)); // Convert UNIX timestamp to milliseconds
-              } 
-              // Handle date string
-              else if (targetTime && typeof targetTime === 'string') {
+              } else if (targetTime && !isNaN(targetTime)) {
+                setTargetTime(new Date(targetTime * 1000));
+              } else if (targetTime && typeof targetTime === 'string') {
                 setTargetTime(new Date(targetTime));
               } else {
                 console.error("targetTime is not available or in an unrecognized format");
               }
             } else {
               console.log("Document does not contain targetTime");
-              // Handle the absence of targetTime appropriately
-              // For example, you might want to set targetTime to null or a default value
-              setTargetTime(null); // or any default value you see fit
+              setTargetTime(null);
             }
           }
         } else {
@@ -53,50 +47,64 @@ function CountdownTimer({}) {
         }
       } catch (error) {
         console.error("Error fetching active advertisement:", error);
+      } finally {
+        setLoading(false);
       }
     };
-  
+
     fetchTargetTime();
   }, []);
-  
+
   useEffect(() => {
     if (!targetTime) return;
-  
+
     const interval = setInterval(() => {
       const now = new Date();
       const distance = targetTime - now;
-  
+
       if (distance < 0) {
         clearInterval(interval);
         setCountdown('Time is up!');
-        setTimeOver(true)
+        setTimeOver(true);
       } else {
-        // Calculate days, hours, minutes, and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-        // Construct countdown string conditionally based on the days value
-        let countdownString = `${days > 0 ? days + 'd ' : ''}${hours}h ${minutes}m ${seconds}s`;
+
+        let countdownString = '';
+        if (days > 0) {
+          countdownString += `${days}d `;
+        }
+        if (hours > 0 || days > 0) {
+          countdownString += `${hours}h `;
+        }
+        if (minutes > 0 || hours > 0 || days > 0) {
+          countdownString += `${minutes}m `;
+        }
+        countdownString += `${seconds}s`;
+
         setCountdown(countdownString);
       }
     }, 1000);
-  
+
     return () => clearInterval(interval);
   }, [targetTime]);
-  
-console.log(';;;;;;;;;;;;;;;;;;;;;;;countdown',targetTime)
+
+  if (loading ) {
+    return <Loading />;
+  }
+
   return (
-    <div className='container ' id='empty ' style={{height:'100vh', display:'flex', alignItems:'center', justifyContent:'center'}}>
+    <div className='container' style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div className="empty-state">
         <div className="empty-state__content">
           <div className="empty-state__icon">
-            <img src={image} alt="Countdown Timer" />
+            <img src={PIC} alt="Countdown Timer" />
           </div>
-          <div className="empty-state__message">Please Wait. The Secret Code Will Reveal {countdown}</div>
+          <div className="empty-state__message"><span>Please wait. The secret code will be revealed in</span><span> {countdown}</span></div>
           <div className="empty-state__help">
-            Stay tuned...
+            stay tuned...
           </div>
         </div>
       </div>

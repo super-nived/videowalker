@@ -26,14 +26,14 @@ function Contact() {
             <FiInstagram className='insta'/>
             <h4>Instagram</h4>
 
-            <a href="https://www.instagram.com/super_nived/">send an message</a>
+            <a href="https://www.instagram.com/super_nived/" >send an message</a>
           </article>
         </div>
         <form >
           <input name="name"  type="text" placeholder='full name' />
           <input name='email' type="text" placeholder='Email' />
           <textarea name="content" placeholder='text your message' required></textarea>
-          <button className='btn btn-primary' >send message</button>
+          <button className='btn btn-primary' onClick={()=>{alert('"Sorry, currently this feature is not available. You can choose from other options.')}} >send message</button>
           <ul className='privacy'>
            <span><li><a href="">privacy</a></li></span> 
            <span><li><a href="">terms and conditions</a></li></span> 

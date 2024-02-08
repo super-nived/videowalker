@@ -22,7 +22,7 @@ function Nodata({link}) {
   // Get the image URL from local storage
   const image = localStorage.getItem('Image') || PIC;
   return (
-    <div className='container'>
+    <div className='container'style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div class="empty-state">
     <div class="empty-state__content">
       <div class="empty-state__icon">
