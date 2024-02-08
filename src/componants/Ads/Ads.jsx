@@ -56,7 +56,7 @@ const Ads = () => {
   if(isLoading){
     <Loading></Loading>
   }
-  if (!isTimeOver) {
+  if (!isTimeOver && advertisers.length !=0) {
     return <CountdownTimer />;
   }
   if (advertisers.length == 0 &&  !isLoading  ){
