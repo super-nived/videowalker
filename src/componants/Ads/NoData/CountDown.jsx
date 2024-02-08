@@ -91,7 +91,7 @@ function CountdownTimer() {
     return () => clearInterval(interval);
   }, [targetTime]);
 
-  if (loading ) {
+  if (loading && !targetTime && !countdown) {
     return <Loading />;
   }
 
@@ -102,7 +102,7 @@ function CountdownTimer() {
           <div className="empty-state__icon">
             <img src={PIC} alt="Countdown Timer" />
           </div>
-          <div className="empty-state__message"><span>Please wait. The secret code will be revealed in</span><span> {countdown}</span></div>
+          <div className="empty-state__message"><span>Please wait. The secret code will be revealed in</span><span> {countdown ? countdown : " 00 : 00 : 00 "}</span></div>
           <div className="empty-state__help">
             stay tuned...
           </div>
