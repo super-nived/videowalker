@@ -4,9 +4,5 @@
   command = "CI='' yarn build"
   publish = "build" # Make sure this directory matches your build output directory
 
-# Specify the Node.js version used for the build (optional)
-[context.production.environment]
-  NODE_VERSION = "14.17.0"
-
-# Additional context configurations can be specified for different deploy contexts
-# such as deploy previews, branch deploys, or even specific branch contexts.
+[build.environment]
+  NODE_VERSION = "16.0.0"
