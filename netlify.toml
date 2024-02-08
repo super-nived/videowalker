@@ -1,8 +1,7 @@
-# netlify.toml
+
 [build]
-  # Custom build command that prevents warnings from being treated as errors
   command = "CI='' yarn build"
   publish = "build" # Make sure this directory matches your build output directory
 
 [build.environment]
-  NODE_VERSION = "16.0.0"
+  NODE_VERSION = "14.15.0"
