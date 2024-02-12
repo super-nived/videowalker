@@ -62,6 +62,9 @@ const Ads = () => {
   if (advertisers.length == 0 &&  !isLoading  ){
     return <Nodata></Nodata>
   }
+  if (advertisers.some(ad => ad.active === 'yes' && ad.task_over === 'yes')) {
+    return <Nodata />; // Show "No data" message if any advertiser is active and task is over
+  }
   return (
     <div className="ads container">
       {advertisers.map((ad) => (

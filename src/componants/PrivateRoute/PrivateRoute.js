@@ -1,18 +1,13 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';// Make sure this path is correct
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+ // Adjust the import path according to your project structure
 
+const PrivateRoute = () => {
 
- const ProtectedRoute = ({ children }) => {
-  const { currentUser } = useAuth(); // useAuth is your custom hook from AuthContext
-
-  if (!currentUser) {
-    // If there is no current user, redirect to the login page
-    return <Navigate to="/login" />;
-  }
-
-  return children; // If the user is authenticated, render the children components
+  const { currentUser } = useAuth(); // Get the current user from the auth context
+  console.log('lsdfkjsdlkfsdlkjfskljd',currentUser)
+  return currentUser ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-
-export default  ProtectedRoute
+export default PrivateRoute;

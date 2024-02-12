@@ -16,6 +16,7 @@ function Updating() {
     treasure_task: '',
     treasure_location: '',
     active: 'yes',
+    task_over: 'no',
     content: '',
     targetTime:''
     // company_image and treasure_image initially don't have default values;
@@ -97,7 +98,13 @@ function Updating() {
         <input name='treasure_task' type='text' placeholder='task' value={data.treasure_task || ''} onChange={handleChange} />
         <input name='treasure_location' type="text" placeholder='treasure location' value={data.treasure_location || ''} onChange={handleChange} />
         <input type="datetime-local" id="targetTime" name="targetTime" required  value={data.targetTime || ''} onChange={handleChange}  />
-        <select name="active" value={data.active || 'yes'} onChange={handleChange} required>
+        <label htmlFor="active">Make it AD</label>
+        <select name="active" id="active" value={data.active || 'yes'} onChange={handleChange} required>
+          <option style={optionStyle} value="yes">Yes</option>
+          <option style={optionStyle} value="no">No</option>
+        </select>
+        <label htmlFor="task_over">Is the Task Over?</label>
+        <select name="task_over" id="task_over" value={data && data.task_over ? data.task_over : 'no'} onChange={handleChange} required>
           <option style={optionStyle} value="yes">Yes</option>
           <option style={optionStyle} value="no">No</option>
         </select>

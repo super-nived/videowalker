@@ -73,6 +73,10 @@
     flex-direction: column;
     gap: 1.2rem;
 }
+.Uploading__container form label{
+    color:white ;
+    font-size: 12px;
+}
 input,textarea,select{
     width: 100%;
     padding: 1.5rem;

@@ -28,9 +28,9 @@ function Nodata({link}) {
       <div class="empty-state__icon">
       <img src={image}></img>
             </div>
-      <div class="empty-state__message">No records has been added yet.</div>
+      <div class="empty-state__message">The last secret code is revealed, and the gift is handed over... Next secret will be revealed at any time, so...</div>
       <div class="empty-state__help">
-        please refresh or try again later
+      stay tuned...
       </div>
     </div>
   </div>

@@ -12,6 +12,9 @@ import TresureDetails from './pages/TresureDetails';
 import AdminEdit from './pages/AdminEdit';
 import Updating from './admin/crud/Update';
 import { TimeOverProvider } from './context/Context';
+import Login from './componants/Login/Login';
+import { AuthProvider } from './context/AuthContext';
+import PrivateRoute from './componants/PrivateRoute/PrivateRoute';
 
 
 
@@ -19,6 +22,7 @@ function App() {
   return (
 
     <div className="App">
+      <AuthProvider>
         <TimeOverProvider>
        <BrowserRouter>    
        {/* <ScrollToTop> */}
@@ -30,13 +34,19 @@ function App() {
           <Route path='/contact' element={<Cnt/>}></Route> 
           <Route path='/game' element={<Game/>}></Route> 
           <Route path='/admin' element={<Admin></Admin>}></Route> 
-          <Route path='/Crud' element={<AdminEdit></AdminEdit>}></Route> 
+          <Route path="/admin" element={<PrivateRoute />}>
+                <Route index element={<Admin />} />
+                <Route path="edit" element={<AdminEdit />} />
+                <Route path="update/:documentId" element={<Updating />} />
+          </Route>
           <Route path='/update/:documentId' element={<Updating></Updating>}></Route> 
+          <Route path = '/login' element={<Login></Login> }></Route>
           
         </Routes>
         {/* </ScrollToTop>   */}
       </BrowserRouter>
       </TimeOverProvider>
+      </AuthProvider>
     </div>
 
   );

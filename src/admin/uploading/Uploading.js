@@ -4,7 +4,7 @@ import { storage, firestore } from '../../firebase/firebase';
 import "./Uploading.css";
 
 function Uploading() {
-  
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const optionStyle = {
@@ -61,10 +61,16 @@ function Uploading() {
         <input name='treasure_task' type='text' placeholder='task' />
         <input name='treasure_location' type="text" placeholder='treasure location' />
         <input type="datetime-local" id="targetTime" name="targetTime" required />
-        <select name="active" required>
-           <option style={optionStyle} className="option" value="yes">Yes</option>
-           <option style={optionStyle} className="option" value="no">No</option>
-        </select> 
+        <label htmlFor="active">Make it AD</label>
+        <select name="active" id="active" required>
+          <option style={optionStyle} className="option" value="yes">Yes</option>
+          <option style={optionStyle} className="option" value="no">No</option>
+        </select>
+        <label htmlFor="task_over">Is the Task Over?</label>
+        <select name="task_over" id="task_over" required>
+          <option style={optionStyle} className="option" value="yes">Yes</option>
+          <option style={optionStyle} className="option" value="no">No</option>
+        </select>
         <textarea name="content" placeholder='text your message' required></textarea>
         <button className='btn btn-primary' type="submit" disabled={loading}>
           {loading ? 'Uploading...' : 'Send Message'}

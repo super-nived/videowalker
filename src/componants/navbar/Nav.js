@@ -12,7 +12,7 @@ function Nav () {
   return (
     <nav>
        <div className="container nav-container">
-        <div className='logo'><h4>video walker</h4></div>
+        <div className='logo'><Link to={'/'}><h4>video walker</h4></Link></div>
         
         {/* <Link to ='/game'><button className='game-button'>$20</button></Link> */}
         <ul className={state ? `nav-menu ${'show'}` : 'nav-menu'}>

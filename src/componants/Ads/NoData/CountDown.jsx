@@ -91,7 +91,7 @@ function CountdownTimer() {
     return () => clearInterval(interval);
   }, [targetTime]);
 
-  if (loading ) {
+  if (loading || countdown == '' ) {
     return <Loading />;
   }
 
