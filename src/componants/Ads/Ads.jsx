@@ -71,7 +71,7 @@ const Ads = () => {
         <div key={ad.id} className="card">
           <div className="imgBx">
             <span>sponser</span>
-            <img style={{ objectFit: 'contain' }} src={ad.company_image || ''} alt="" />
+            <img style={{ objectFit: 'cover' }} src={ad.company_image || ''} alt="" />
           </div>
           <div className="content">
             <h4>{ad.title || "FIND SECRET CODE"}</h4>

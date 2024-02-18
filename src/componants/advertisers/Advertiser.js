@@ -54,9 +54,9 @@ function Advertiser() {
         
       <section className='team'>
         <h2>Meet Our Advertiser</h2>
-        <h5>
-          Welcome! All our advertisers are listed below, sorted by the advertised amount.
-        </h5>
+        <h6>
+        See all the  ads below, they're lined up by how many coins they offer
+        </h6>
         { advertisers && advertisers.length <= 0 ? <Nodata></Nodata> :
         <div className="container team-container">
 
@@ -75,7 +75,7 @@ function Advertiser() {
                   <p> ₹ {advertiser.adverticement_price}</p>
                 </div>
                 <div className='team-member-socials'>
-                  <a href={advertiser.company_website}>see website</a>
+                  <a href={advertiser.company_website}>TAP HERE</a>
                 </div>
               </article>
             ))}

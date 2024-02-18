@@ -64,10 +64,11 @@
     box-shadow: inset 0 0 3rem rgba(0,0,0,0.5);
 
 }
-.team h5 {
+.team h6 {
     text-align: center;
     font-size: 1rem;
     margin-bottom:2rem;
+    color: rgba(240, 239, 239, 0.863);
 }
 .team-container{
     display: grid;
@@ -109,8 +110,14 @@
     filter: saturate(1);
 
 }
-
+.team-member-info {
+ 
+ 
+    margin-top: 1rem;
+    gap: 10px;
+   }
 .team-member-info *{
+
  text-align: center;
 }
 
@@ -140,7 +147,8 @@
 }
 
 .team-member-socials{
-    font-size: 1.6rem;
+    font-size: 12px;
+    font-weight: 700;
     padding: 0.5rem;
     background: var(--color-primary);
     border-radius: 2rem 2rem 0 0;

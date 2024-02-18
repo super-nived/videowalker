@@ -3,6 +3,7 @@ import { storage, firestore } from '../../firebase/firebase';
 import '../uploading/Uploading.css'
 
 import { useParams } from 'react-router-dom';
+import Nav from '../../componants/navbar/Nav';
 
 function Updating() {
   const {documentId} = useParams();
@@ -87,6 +88,8 @@ function Updating() {
   };
 
   return (
+    <>
+    <Nav></Nav>
     <div className="container fc Updating__container">
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -113,7 +116,7 @@ function Updating() {
           {loading ? 'Processing...' : 'Update Document'}
         </button>
       </form>
-    </div>
+    </div></>
   );
 }
 

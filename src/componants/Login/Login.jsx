@@ -12,6 +12,7 @@ const Login = () => {
     try {
       await login(username, password); // Use the login function from your auth context
       console.log('Logged in successfully');
+      window.location.href = '/admin'; // Redirect
       // Redirect the user or show a success message
     } catch (error) {
       console.error('Failed to log in', error);

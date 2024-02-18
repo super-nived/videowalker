@@ -26,7 +26,7 @@ function About() {
             <p><span className='sub-title'>For Advertisers   : </span> Your ads don't just live online; they hit the streets! When you advertise with us, your content is not only featured on our website but also on our video walker's display panels, ensuring maximum visibility. Our platform is perfect for those looking to increase their reach in a novel and engaging way.</p>
             <h3>Flexible and Growing Daily</h3>
 
-            <p>Start advertising with us from as little as 10 rupees. You have the freedom to set your advertisement price above the previous day's rate, allowing you to choose how much to invest based on your budget and advertising goals. This flexible approach guarantees that the platform evolves daily, with the potential for rewards growing alongside the advertisement value.</p>
+            <p>Start advertising with us for as little as 100 rupees. You have the freedom to set your advertisement price above the rate shown on the previous ad day, allowing you to decide how much to invest based on your budget and advertising goals. This flexible approach ensures that the platform evolves daily, with the potential for rewards growing alongside the advertisement value. Looking for a deal? If our latest ad rate seems high, don't worry—we've got discounts to fit your budget! With us, your ad cost can grow with your success, ensuring you get the best value for your investment</p>
             {/* <a href='https://wa.me/8129701739/?text=Your%20Message%20Here' className='btn'> Learn More</a> */}
             <Link className='btn' to='/tresuredetails'>JUST START</Link>
             </div> 
