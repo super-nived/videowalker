@@ -49,7 +49,7 @@ nav button{
   background-color: aliceblue;
   transition: var(--tansition);
   opacity: 0.8;
-  display: none;
+
 }
 
 .nav-menu{

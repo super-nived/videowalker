@@ -1,0 +1,38 @@
+.iframe-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Optional: for some spacing around the iframe */
+  }
+  .intro-text {
+    text-align: center;
+    margin: 20px 0; /* Adjust margins as needed */
+    padding: 0 20px; /* Padding for smaller screens */
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.829); /* Adjust font size as needed */
+  }
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 56.25vw; /* 16:9 Aspect Ratio */
+    max-height: 100vh; /* Optional: limits the height to the viewport */
+  }
+  
+  /* Optional: Adjustments for smaller screens */
+  @media (max-width: 600px) {
+
+    .iframe-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Full viewport height */
+        padding: 20px; /* Optional: for some spacing around the iframe */
+      }
+
+    .iframe-container iframe {
+      height: 75vw; /* Adjust the aspect ratio for smaller screens */
+    }
+  }
+  

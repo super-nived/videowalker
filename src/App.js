@@ -15,6 +15,7 @@ import { TimeOverProvider } from './context/Context';
 import Login from './componants/Login/Login';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './componants/PrivateRoute/PrivateRoute';
+import YouTubeFrame from './componants/Youtubeframe/YouTubeFrame';
 
 
 
@@ -32,7 +33,7 @@ function App() {
           <Route path='/tresuredetails' element={<TresureDetails/>}></Route> 
           <Route path='/about' element={<AboutPage/>}></Route> 
           <Route path='/contact' element={<Cnt/>}></Route> 
-          <Route path='/game' element={<Game/>}></Route> 
+          <Route path='/game' element={<YouTubeFrame></YouTubeFrame>}></Route>
           <Route path='/admin' element={<Admin></Admin>}></Route> 
           <Route path="/admin" element={<PrivateRoute />}>
                 <Route index element={<Admin />} />
