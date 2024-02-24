@@ -11,6 +11,7 @@ const Ads = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { isTimeOver, setTimeOver } = useTimeOver();
+  
 
   useEffect(() => {
     const fetchAdvertisers = async () => {
@@ -75,7 +76,7 @@ const Ads = () => {
           </div>
           <div className="content">
             <h4>{ad.title || "FIND SECRET CODE"}</h4>
-            <p>Hey! You're almost there to get a cool surprise! Just say the secret code <span style={{ color: "red" , fontWeight: '' }}>{ad.treasure_task}</span> to our video walker. Tap the 'Find Location' button below to find him</p> 
+            <p> Tell the secret code to our video walker first and win the gift."</p> <span style={{fontWeight:"700" , color: "red"  }}>{ad.treasure_task}</span>
             <a href={ad.treasure_location}>VIDEO WALKER LOCATION</a>
           </div>
         </div>

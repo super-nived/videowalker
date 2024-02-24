@@ -26,7 +26,7 @@ header img{
   height: 80%;
 }
 .animate{
-  font-size: 3.1rem;
+  font-size: 4rem;
   opacity: 1;
 }
 h1 span{
@@ -230,10 +230,20 @@ h1 span:nth-child(18){
   opacity: 0.7;
 
 }
-.large-p{
+.large-p {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 13px;
   margin: 1rem;
 }
-.small-p{
+.small-p {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 13px;
   display: none;
   text-align: center;
   opacity: 0.7;
@@ -263,12 +273,12 @@ h1 span:nth-child(18){
 @media screen and (max-width:600px) {
    header{
     height:auto;
-    margin: 2rem;
+    margin: 0;
     padding-top: 0;
   
    }
    .animate{
-    font-size: 1.7rem;
+    font-size: 2.7rem;
     opacity: 1;
   }
    .large-p{
@@ -278,12 +288,17 @@ h1 span:nth-child(18){
    .small-p{
     display: block;
     margin: .5rem;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 13px;
    }
    header h1{
     text-align: center;
    }
    .header-container{
-     margin-top: 0;
+     margin-top: 40px;
      display: flex;
      justify-content: space-between;
      flex-direction: column;

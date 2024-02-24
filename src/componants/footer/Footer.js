@@ -29,7 +29,7 @@ function Footer() {
                 <h4>CONTACT-US</h4>
                 <div>
                     <p>6238117525</p>
-                    <p>nivedchandran7@gmail.com</p>
+                    
                     <ul className='socials'>
                     <li><a href="mailto:nivedchandran7@gmail.com?subject=The%20Subject&body=Hi%20Nived,"><AiOutlineMail></AiOutlineMail></a></li>
                     <li> <a href="https://wa.me/6238117525?text=Hi%20Nived"><ImWhatsapp></ImWhatsapp></a></li>

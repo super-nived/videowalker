@@ -21,34 +21,40 @@ function Header() {
                 <div className="header-left">
                     <h1 className='animate' >
 
-                        <span>T</span>
-                        <span>H</span>
+                        <span>G</span>
                         <span>E</span>
+                        <span>T</span>
                         <span></span>
                         <br></br>
-                        <span>V</span>
-                        <span>I</span>
-                        <span>D</span>
-                        <span>E</span>
-                        <span>O</span>
-                        <span> </span>
-                        <span>W</span>
                         <span>A</span>
-                        <span>L</span>
-                        <span>K</span>
-                        <span>E</span>
+                        <span> </span>
+                        <span>F</span>
                         <span>R</span>
+                        <span>E</span>
+                        <span>E</span>
+                        <span> </span>
+                        <span>G</span>
+                        <span>I</span>
+                        <span>F</span>
+                        <span>T</span>
+                      
                
 
 
                     </h1>
                     <p className='large-p'>
-                    Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift!
-
+                    {/* Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift! */}
+                    <h4>compleate the 3 task win the price</h4>
+                    <span>1. Take a break! Find the secret code.</span>
+                    <span>2. say that code to Video Walker (first)</span>
+                    <span>3. Claim your surprise gift!.</span>
                     </p>
                     <p className='small-p' >
-
-                    Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift!
+                   
+                      <span>1. Take a break! Find the secret code.</span>
+                      <span>2. say that code to Video Walker (first)</span>
+                      <span>3. Claim your surprise gift!.</span>
+                      <span></span>
                     </p>
                     <a href='#' className='btn btn-primary'><Link to='/tresuredetails'>SECREAT CODE</Link></a>
                 </div>
