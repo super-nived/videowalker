@@ -10,9 +10,10 @@ const YouTubeFrame = ({ videoId }) => {
   return (
     <>
     <Nav></Nav>
+    <div className="youtube-container">
     <div className="intro-text">
         This is a simple tutorial for how to get free gifts from Video Walker.
-    </div>
+      </div>
     <div className="iframe-container">
       <iframe
         src={iframeSrc}
@@ -21,6 +22,7 @@ const YouTubeFrame = ({ videoId }) => {
         allowFullScreen
         title="YouTube video"
       ></iframe>
+    </div>
     </div>
     <Footer></Footer>
     </>

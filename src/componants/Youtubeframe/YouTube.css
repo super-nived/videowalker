@@ -1,5 +1,8 @@
+.youtube-container{
+  margin-top: 10rem;
+}
 .iframe-container {
-    margin-top: 4rem;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +26,9 @@
   
   /* Optional: Adjustments for smaller screens */
   @media (max-width: 600px) {
-
+    .youtube-container{
+      margin-top: 10rem;
+    }
     .iframe-container {
         display: flex;
         justify-content: center;

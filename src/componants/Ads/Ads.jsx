@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import { firestore } from '../../firebase/firebase';
 import Loading from '../Loading/Loading';
 import Nodata from '../nodata/Nodata';
+import BlurIMage from '../../asset/Head.png'
 import './Ads.css';
 import CountdownTimer from "./NoData/CountDown";
 import { useTimeOver } from "../../context/Context";
+import BlurryLoadingImage from "../BlurImageLoader/BlurIMageLoader";
 
 const Ads = () => {
   const [advertisers, setAdvertisers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [uiReady, setUiReady] = useState(false);
   const [error, setError] = useState(null);
   const { isTimeOver, setTimeOver } = useTimeOver();
   
@@ -49,6 +52,9 @@ const Ads = () => {
     };
 
     fetchAdvertisers();
+    if (!isLoading && advertisers.length > 0) {
+      setTimeout(() => setUiReady(true), 300); // Adjust delay as needed
+    }
   }, [isTimeOver]);
 
   if (error) {
@@ -70,13 +76,15 @@ const Ads = () => {
     <div className="ads container">
       {advertisers.map((ad) => (
         <div key={ad.id} className="card">
-          <div className="imgBx">
+          <div className="imgBx" >
             <span>sponser</span>
-            <img style={{ objectFit: 'cover' }} src={ad.company_image || ''} alt="" />
+            <BlurryLoadingImage src={ad.company_image || ''} ></BlurryLoadingImage>
+            
           </div>
           <div className="content">
             <h4>{ad.title || "FIND SECRET CODE"}</h4>
-            <p> Tell the secret code to our video walker first and win the gift."</p> <span style={{fontWeight:"700" , color: "red"  }}>{ad.treasure_task}</span>
+            <span style={{fontWeight:"700" , color: "red"  }}>{ad.treasure_task}</span>
+            <p> * Only the first person to tell the secret code(above text in red) to the video walker can get the prize..</p> 
             <a href={ad.treasure_location}>VIDEO WALKER LOCATION</a>
           </div>
         </div>

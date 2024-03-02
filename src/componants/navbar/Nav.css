@@ -38,7 +38,27 @@ nav button{
     display: none;
     
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(187, 187, 187, 0.3);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(168, 167, 167, 0.5);
+  }
+}
+
+
+
+.game-button.no-bounce {
+  animation: none;
+}
+
+
 .game-button{
+  
+  animation: bounce 1.5s infinite;
   display: inline-block;
   color: var(--color-black);
   padding: 0.2rem ;

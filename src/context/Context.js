@@ -20,3 +20,24 @@ export const TimeOverProvider = ({ children }) => {
     </TimeOverContext.Provider>
   );
 };
+
+
+
+
+
+// Creating a new context for the clicked state
+const ClickedContext = createContext();
+
+// Custom hook to use Clicked context
+export const useClicked = () => useContext(ClickedContext);
+
+// Provider component for the Clicked context
+export const ClickedProvider = ({ children }) => {
+  const [clicked, setClicked] = useState(false);
+
+  return (
+    <ClickedContext.Provider value={{ clicked, setClicked }}>
+      {children}
+    </ClickedContext.Provider>
+  );
+};

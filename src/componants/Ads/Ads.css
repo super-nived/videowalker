@@ -24,16 +24,41 @@ transition: 0.5s;
     margin-top: 8rem;
 }
 
-.ads .card .imgBx{
-    position: absolute;
-    top: 20px;
-    width: 300px;
-    height: 220px;
-    background: #333;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.5s;
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0; /* Start from the left */
+  }
+  100% {
+    background-position: 300px 0; /* Move to the right */
+  }
 }
+
+.ads .card .imgBx {
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  height: 220px;
+  background: #d4d4d434; /* Base color */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.5s;
+
+  /* Updated Skeleton Animation Effect */
+  background: linear-gradient(
+    to right, 
+    #d4d4d434 8%, 
+    #f0f0f0 18%, /* Softer shade for the highlight */
+    #d4d4d434 33%
+  );
+  background-size: 200% 100%; /* Increase background size for a softer transition */
+  animation-duration: 2s; /* Slower animation for a softer effect */
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+}
+
+ 
 
 .ads .card:hover .imgBx{
  top: -100px;
@@ -74,7 +99,7 @@ transition: 0.5s;
 }
 
 .ads .card .content h4{
-    margin-top: 2rem;
+    margin-top: 3rem;
     border: 1px solid var(--color-bg);
     font-size: 1em;
     font-weight: 700;
