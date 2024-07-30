@@ -170,7 +170,6 @@ flex-direction: column;
   
   /* Insights Container Styles */
   .insights-container {
-    margin-top: 20px;
     text-align: center;
     background:#F2E8E0;
     padding: 20px;
@@ -181,6 +180,7 @@ flex-direction: column;
   .insights-container h4 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    color: #666;
   }
   
   .insights-container p {

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import './Header.css'
-import PIC from '../../asset/boy.png'
+import PIC from '../../asset/Gift.png'
 import { Link } from 'react-router-dom';
+import Giftbox from '../GiftAnimation/Giftbox';
 function Header() {
     useEffect(() => {
         // Check local storage for the image URL
@@ -21,22 +22,25 @@ function Header() {
                 <div className="header-left">
                     <h1 className='animate' >
 
-                        <span>G</span>
-                        <span>E</span>
-                        <span>T</span>
+                        <span>F</span>
+                        <span>I</span>
+                        <span>N</span>
+                        <span>D</span>
                         <span></span>
                         <br></br>
-                        <span>A</span>
+                        <span>T</span>
+                        <span>H</span>
+                        <span>E</span>
                         <span> </span>
-                        <span>F</span>
+                        <span>T</span>
                         <span>R</span>
                         <span>E</span>
+                        <span>A</span>
+                        <span>S</span>
+                        <span>U</span>
+                        <span>R</span>
                         <span>E</span>
-                        <span> </span>
-                        <span>G</span>
-                        <span>I</span>
-                        <span>F</span>
-                        <span>T</span>
+            
                       
                
 
@@ -45,22 +49,19 @@ function Header() {
                     <p className='large-p'>
                     {/* Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift! */}
                     <h4>compleate the 3 task win the price</h4>
-                    <span>1. Take a break! Find the secret code.</span>
-                    <span>2. say that code to Video Walker (first)</span>
-                    <span>3. Claim your surprise gift!.</span>
+                    <span>Welcome! Discover your treasure today. Uncover hidden rewards and transform your luck into a gift. Click the button below to start your journey to the treasure box.</span>
+          
                     </p>
                     <p className='small-p' >
                    
-                      <span>1. Take a break! Find the secret code.</span>
-                      <span>2. say that code to Video Walker (first)</span>
-                      <span>3. Claim your surprise gift!.</span>
-                      <span></span>
+                      <span>Welcome! Discover your treasure today. Uncover hidden rewards and transform your luck into a gift. Click the button below to start your journey to the treasure box.</span>
+ 
                     </p>
-                    <a href='#' className='btn btn-primary'><Link to='/tresuredetails'>SECREAT CODE</Link></a>
+                    <a href='#' className='btn btn-primary'><Link to='/tresuredetails'>PRESS ME !</Link></a>
                 </div>
                 <div className="header-right">
                     <div className="header-image">
-                        <img src={headerImage} alt="" />
+                       <Giftbox></Giftbox>
                     </div>
                 </div>
             </div>

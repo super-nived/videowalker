@@ -21,10 +21,10 @@ function About() {
             
             <h3>How It Works</h3>
 
-            <p><span className='sub-title'>For Users  :</span> Each day, we share a whopping 90% of our daily ad revenue with our users. It's simple: participate, find the secret code in our dedicated section, and be the first to say it to our roaming video walker. If you're the first, the day's prize is yours! Every day brings a new chance to win.</p>
+            <p><span className='sub-title'>For Users : </span> Every day, we share 90% of our daily ad revenue with our users. It's easy: participate by finding the treasure box in our dedicated section, where you will see an image of the gift location and a button to navigate to it on Google Maps. Be the first to find it and win the day's prize! Each day offers a new opportunity to win.</p>
            
-            <p><span className='sub-title'>For Advertisers   : </span> Your ads don't just live online; they hit the streets! When you advertise with us, your content is not only featured on our website but also on our video walker's display panels, ensuring maximum visibility. Our platform is perfect for those looking to increase their reach in a novel and engaging way.</p>
-            <h3>Flexible and Growing Daily</h3>
+            <p><span className='sub-title'>For Advertisers : </span> Advertise your company on our website and engage users with exciting giveaways. It's more than just advertising—it's an entertaining experience for users, driving your success too.</p>
+            <h3>Flexible and Growing Daily</h3>       
 
             <p>Start advertising with us for as little as 100 rupees. You have the freedom to set your advertisement price above the rate shown on the previous ad day, allowing you to decide how much to invest based on your budget and advertising goals. This flexible approach ensures that the platform evolves daily, with the potential for rewards growing alongside the advertisement value. Looking for a deal? If our latest ad rate seems high, don't worry—we've got discounts to fit your budget! With us, your ad cost can grow with your success, ensuring you get the best value for your investment</p>
             {/* <a href='https://wa.me/8129701739/?text=Your%20Message%20Here' className='btn'> Learn More</a> */}
