@@ -15,6 +15,7 @@ import Login from './componants/Login/Login';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './componants/PrivateRoute/PrivateRoute';
 import YouTubeFrame from './componants/Youtubeframe/YouTubeFrame';
+import MystoryboxPage from './pages/Mystorybox';
 
 
 
@@ -30,7 +31,7 @@ function App() {
               <Routes>
                 <Route exact='/' path='/' element={<Mains />} />
                 <Route path='/advertisers' element={<AdvertiserPage />}></Route>
-                <Route path='/tresuredetails' element={<TresureDetails />}></Route>
+                <Route path='/tresuredetails' element={<MystoryboxPage/>}></Route>
                 <Route path='/about' element={<AboutPage />}></Route>
                 <Route path='/contact' element={<Cnt />}></Route>
                 <Route path='/game' element={<YouTubeFrame></YouTubeFrame>}></Route>

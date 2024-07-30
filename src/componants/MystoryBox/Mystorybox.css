@@ -1,0 +1,244 @@
+
+.Mystorybox-main-container{
+width:1;
+height: fit-content;
+
+background: #1f2641;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.Mystorybox-inner-container{
+width: 600px;
+height: fit-content;
+background: #fff;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+/* Navbar Styles */
+.mystory-navbar-container {
+    padding: 20px;
+    background-color: #fff;
+    color: #666;
+    width: 100%;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .mystory-navbar-container h1 {
+    color: #666;
+  }
+  
+  /* Giftspot Header Styles */
+  .giftspot-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .giftspot-logo {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  .giftspot-title {
+    font-size: 2rem;
+  }
+  
+  /* Gift Banner Styles */
+  .gift-banner {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    width: 100%;
+/* Adjust this value to control the max width */
+    margin: 0 auto;
+  }
+  
+  .gift-banner .title {
+    padding-top: 2rem;
+    text-align: start;
+    color: #666;
+  }
+  
+  .gift-banner .content {
+    color: #666;
+    padding-top: 4rem;
+    text-align: start;
+  }
+  
+  .gift-banner-image {
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 3000;
+    height: 300px;
+    object-fit: contain;
+    position: relative;
+  }
+.tap-overlay{
+   position:absolute;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.301);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+}
+
+.overlay-content{
+ font-size: 16px;
+ font-weight: 600;
+ color: #fff;
+}
+
+  .gift-banner-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  /* Gift Icon Styles */
+.gift-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+}
+
+  .gift-icon img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Company Container Styles */
+  .company-container {
+    padding: 1rem;
+    max-width:auto;
+    margin: 0 auto;
+    background:#F2E8E0;
+  }
+  
+  .company-overview-container {
+    text-align: center;
+    background:#F2E8E0;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .company-overview-container .title{
+    color: #666;
+  }
+
+  .company-overview-container .content{
+    color: #666;
+  }
+
+
+
+  .company-overview-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .company-overview-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .company-image {
+    width: 100%;
+    max-width: 600px; /* Adjust based on your image size */
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Insights Container Styles */
+  .insights-container {
+    margin-top: 20px;
+    text-align: center;
+    background:#F2E8E0;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .insights-container h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .insights-container p {
+    font-size: 1rem;
+    color: #666; /* Adjust color as needed */
+  }
+  
+  /* Mystorybox Content Container */
+  .Mystorybox-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 750px) {
+    .Mystorybox-content-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .mystory-navbar-container {
+      padding: 10px;
+    }
+  
+    .giftspot-header {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .giftspot-title {
+      font-size: 1.5rem;
+    }
+  
+    .gift-banner {
+        padding: 20px;
+    }
+  
+    .company-container {
+      padding: 0.5rem;
+    }
+  
+    .company-overview-container h3 {
+      font-size: 1.25rem;
+    }
+  
+    .company-overview-container p {
+      font-size: 0.875rem;
+    }
+  
+    .insights-container h4 {
+      font-size: 1rem;
+    }
+  
+    .insights-container p {
+      font-size: 0.875rem;
+    }
+  }
+  
