@@ -22,3 +22,24 @@
 // }
 
 // export default Gifts;
+
+
+
+
+
+
+    // if (error) {
+  //   return <div className="error-message" style={{ width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Error: {error}</div>;
+  // }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
+  // if (!isTimeOver && advertisers.length !== 0) {
+  //   return <CountdownTimer targetTime={advertisers[0].targetTime} />;
+  // }
+  // if (advertisers.length === 0 && !isLoading) {
+  //   return <Nodata />;
+  // }
+  // if (advertisers.some(ad => ad.active === 'yes' && ad.task_over === 'yes')) {
+  //   return <Nodata />; // Show "No data" message if any advertiser is active and task is over
+  // }

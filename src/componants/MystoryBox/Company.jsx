@@ -4,17 +4,17 @@ import BannerImage from '../../asset/python.png'
 
 
 
-const Company = () => {
+const Company = ({advertisers}) => {
     return (
       <div className="company-container">
         <div className="company-overview-container">
           <h3 className="title">SPONSOR</h3>
-          <p className="content">We are celebrating 5 successful years at our Kerala Kakkanad branch! Join us and enjoy special offers. Eat and celebrate with us!</p>
-          <img src={"https://b.zmtcdn.com/data/pictures/chains/4/95314/a6f9d24581cae5f83a6ea282ca018f62.jpg"} alt="Company Overview" className="company-image" />
+          <p className="content">{advertisers[0]?.content}</p>
+          <img src={advertisers[0]?.company_image ? advertisers[0]?.company_image : "https://via.placeholder.com/150"} alt="Company Overview" className="company-image" />
         </div>
         <div className="insights-container">
-          <h4  >TAP TO SEE OUR OFFERS</h4>
-          <p className="">by kfc kakkanad</p>
+          <h4  ><a href={advertisers[0]?.company_website}>TAP TO SEE OUR OFFERS</a></h4>
+          <p className="">by {advertisers[0]?.company_name}</p>
         </div>
       </div>
     );

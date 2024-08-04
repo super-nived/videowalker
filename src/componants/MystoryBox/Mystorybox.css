@@ -177,8 +177,8 @@ flex-direction: column;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   }
   
-  .insights-container h4 {
-    font-size: 1.25rem;
+  .insights-container h4 a {
+    font-size: 1rem;
     margin-bottom: 0.5rem;
     color: #666;
   }

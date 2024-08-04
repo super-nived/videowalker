@@ -48,7 +48,7 @@ function Header() {
                     </h1>
                     <p className='large-p'>
                     {/* Take a break! Find the secret code. Once you've cracked it, say that code to Video Walker to claim your surprise gift! */}
-                    <h4>compleate the 3 task win the price</h4>
+                    {/* <h4>compleate the 3 task win the price</h4> */}
                     <span>Welcome! Discover your treasure today. Uncover hidden rewards and transform your luck into a gift. Click the button below to start your journey to the treasure box.</span>
           
                     </p>

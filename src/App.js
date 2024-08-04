@@ -35,7 +35,7 @@ function App() {
                 <Route path='/about' element={<AboutPage />}></Route>
                 <Route path='/contact' element={<Cnt />}></Route>
                 <Route path='/game' element={<YouTubeFrame></YouTubeFrame>}></Route>
-                <Route path='/admin' element={<Admin></Admin>}></Route>
+                {/* <Route path='/admin' element={<Admin></Admin>}></Route> */}
                 <Route path="/admin" element={<PrivateRoute />}>
                   <Route index element={<Admin />} />
                   <Route path="edit" element={<AdminEdit />} />

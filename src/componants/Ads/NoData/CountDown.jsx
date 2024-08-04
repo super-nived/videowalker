@@ -1,66 +1,20 @@
 // Import necessary dependencies and components
 import React, { useState, useEffect } from 'react';
-import { firestore } from '../../../firebase/firebase';
 import PIC from '../../../asset/boy.png';
 import './CountDown.css';
 import { useTimeOver } from '../../../context/Context';
 import Loading from '../../Loading/Loading';
 
-function CountdownTimer() {
-  const [targetTime, setTargetTime] = useState(null);
+function CountdownTimer({ targetTime }) {
   const [countdown, setCountdown] = useState('');
-  const [loading, setLoading] = useState(true);
   const { isTimeOver, setTimeOver } = useTimeOver();
-
-  useEffect(() => {
-    const fetchTargetTime = async () => {
-      try {
-        const querySnapshot = await firestore.collection('advertisements')
-                                             .where('active', '==', 'yes')
-                                             .limit(1)
-                                             .get();
-
-        if (!querySnapshot.empty) {
-          const doc = querySnapshot.docs[0];
-          if (doc.exists) {
-            const data = doc.data();
-
-            if (data.hasOwnProperty('targetTime')) {
-              let targetTime = data.targetTime;
-
-              if (targetTime && typeof targetTime.toDate === 'function') {
-                setTargetTime(new Date(targetTime.toDate()));
-              } else if (targetTime && !isNaN(targetTime)) {
-                setTargetTime(new Date(targetTime * 1000));
-              } else if (targetTime && typeof targetTime === 'string') {
-                setTargetTime(new Date(targetTime));
-              } else {
-                console.error("targetTime is not available or in an unrecognized format");
-              }
-            } else {
-              console.log("Document does not contain targetTime");
-              setTargetTime(null);
-            }
-          }
-        } else {
-          console.log("No active advertisements found");
-        }
-      } catch (error) {
-        console.error("Error fetching active advertisement:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTargetTime();
-  }, []);
 
   useEffect(() => {
     if (!targetTime) return;
 
     const interval = setInterval(() => {
       const now = new Date();
-      const distance = targetTime - now;
+      const distance = new Date(targetTime) - now;
 
       if (distance < 0) {
         clearInterval(interval);
@@ -91,7 +45,7 @@ function CountdownTimer() {
     return () => clearInterval(interval);
   }, [targetTime]);
 
-  if (loading || countdown == '' ) {
+  if (!targetTime || countdown === '') {
     return <Loading />;
   }
 
