@@ -28,7 +28,7 @@ function Nodata({link}) {
       <div class="empty-state__icon">
       <img src={image}></img>
             </div>
-      <div class="empty-state__message">The last secret code is revealed, and the gift is handed over... Next secret will be revealed at any time, so...</div>
+      <div class="empty-state__message">Currently, our treasure hunt is ongoing without any sponsors. Stay tuned for updates as we will be back with more exciting treasure hunting gifts at any time</div>
       <div class="empty-state__help">
       stay tuned...
       </div>

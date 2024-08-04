@@ -26,7 +26,7 @@ function Uploading() {
     formData.forEach((value, key) => { data[key] = value; });
 
     // Handle file uploads
-    const files = ['company_image', 'treasure_image']; // Add file input names here
+    const files = ['company_image', 'treasure_image', 'winner_image']; // Add file input names here
     for (let file of files) {
       if (data[file] && data[file].size) {
         const storageRef = storage.ref();
@@ -55,11 +55,16 @@ function Uploading() {
       <form onSubmit={handleSubmit}>
         <input name="company_name" type="text" placeholder='company name' />
         <input name='company_website' type="text" placeholder='company website link' />
+        <label htmlFor="company_image">Company Image</label>
         <input name='company_image' type="file" />
         <input name='adverticement_price' type="number" placeholder='advertisement price' />
         <hr />
         <input name='treasure_task' type='text' placeholder='task' />
         <input name='treasure_location' type="text" placeholder='treasure location' />
+        <label htmlFor="treasure_image">Treasure Image</label>
+        <input name='treasure_image' type="file" />
+        <label htmlFor="winner_image">Winner Image</label>
+        <input name='winner_image' type="file" />
         <input type="datetime-local" id="targetTime" name="targetTime" required />
         <label htmlFor="active">Make it AD</label>
         <select name="active" id="active" required>

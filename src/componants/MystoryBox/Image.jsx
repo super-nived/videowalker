@@ -5,17 +5,21 @@ import BannerImage from './Gift.png';
 import ICON from '../../asset/Logo.png';
 import Modal from "../modal/Modal";
 import PIC from '../../asset/boy.png';
+
 import useCountdownTimer from "../../hooks/useCountdownTimer";
 
 function Gifts({ advertisers }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(''); // 'gift' or 'location'
   const [targetTime, setTargetTime] = useState(null);
-  console.log(advertisers);
+  const [isWinner, setIsWinner] = useState(false);
 
   useEffect(() => {
     if (advertisers.length > 0) {
       setTargetTime(advertisers[0].targetTime);
+      if (advertisers[0].active === 'yes' && advertisers[0].task_over === "yes") {
+        setIsWinner(true);
+      }
     }
   }, [advertisers]);
 
@@ -49,8 +53,8 @@ function Gifts({ advertisers }) {
         </div>
         <h2 className="title">Discover The Mysterious Gift For You</h2>
         <p className="content">
-  Hurry! Find your treasure quickly. The first to find the gift gets to keep it. Use the location and image buttons to help you. Tap the image button to see where it's placed and the location button to navigate there.
-</p>
+          Hurry! Find your treasure quickly. The first to find the gift gets to keep it. Use the location and image buttons to help you. Tap the image button to see where it's placed and the location button to navigate there.
+        </p>
 
         <div className="gift-icon">
           <img className="icon" src={ICON} alt="Gift Icon" />
@@ -61,7 +65,12 @@ function Gifts({ advertisers }) {
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         {modalContent === 'gift' ? (
-          isTimeOver ? (
+          isTimeOver && isWinner ? (
+            <div>
+              <img src={advertisers[0]?.winner_image } alt="Winner" className="modal-image" />
+              <p className="winner-message">Today's treasure hunt is over! Congratulations to our winner. You can see the winner above.</p>
+            </div>
+          ) : isTimeOver ? (
             <img src={"https://static.toiimg.com/photo/msid-88320862,width-96,height-65.cms"} alt="Modal Banner" className="modal-image" />
           ) : (
             <div className='countdown-container' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

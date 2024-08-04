@@ -7,7 +7,7 @@ import Nav from '../../componants/navbar/Nav';
 
 function Updating() {
   const {documentId} = useParams();
-  console.log('lksdfjlksdjlfkasldjkf',documentId)
+  console.log('Document ID:', documentId)
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [data, setData] = useState({
@@ -19,8 +19,8 @@ function Updating() {
     active: 'yes',
     task_over: 'no',
     content: '',
-    targetTime:''
-    // company_image and treasure_image initially don't have default values;
+    targetTime: '',
+    // company_image, treasure_image, and winner_image initially don't have default values;
     // they're handled via file inputs
   });
 
@@ -30,7 +30,7 @@ function Updating() {
       firestore.collection('advertisements').doc(documentId).get().then(doc => {
         if (doc.exists) {
           setData(doc.data());
-          console.log(doc.data,'lllllllllllllllllllllll')
+          console.log('Document data:', doc.data())
         } else {
           setError('Document not found');
         }
@@ -57,7 +57,7 @@ function Updating() {
     setError('');
 
     const updatedData = { ...data };
-    const files = ['company_image', 'treasure_image'];
+    const files = ['company_image', 'treasure_image', 'winner_image'];
     for (let file of files) {
       if (updatedData[file] instanceof File) {
         const storageRef = storage.ref();
@@ -89,34 +89,40 @@ function Updating() {
 
   return (
     <>
-    <Nav></Nav>
-    <div className="container fc Updating__container">
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input name="company_name" type="text" placeholder='company name' value={data.company_name || ''} onChange={handleChange} />
-        <input name='company_website' type="text" placeholder='company website link' value={data.company_website || ''} onChange={handleChange} />
-        <input name='company_image' type="file" onChange={handleChange} />
-        <input name='adverticement_price' type="number" placeholder='advertisement price' value={data.adverticement_price || ''} onChange={handleChange} />
-        <hr />
-        <input name='treasure_task' type='text' placeholder='task' value={data.treasure_task || ''} onChange={handleChange} />
-        <input name='treasure_location' type="text" placeholder='treasure location' value={data.treasure_location || ''} onChange={handleChange} />
-        <input type="datetime-local" id="targetTime" name="targetTime" required  value={data.targetTime || ''} onChange={handleChange}  />
-        <label htmlFor="active">Make it AD</label>
-        <select name="active" id="active" value={data.active || 'yes'} onChange={handleChange} required>
-          <option style={optionStyle} value="yes">Yes</option>
-          <option style={optionStyle} value="no">No</option>
-        </select>
-        <label htmlFor="task_over">Is the Task Over?</label>
-        <select name="task_over" id="task_over" value={data && data.task_over ? data.task_over : 'no'} onChange={handleChange} required>
-          <option style={optionStyle} value="yes">Yes</option>
-          <option style={optionStyle} value="no">No</option>
-        </select>
-        <textarea name="content" placeholder='text your message' value={data.content || ''} onChange={handleChange} required></textarea>
-        <button className='btn btn-primary' type="submit" disabled={loading}>
-          {loading ? 'Processing...' : 'Update Document'}
-        </button>
-      </form>
-    </div></>
+      <Nav />
+      <div className="container fc Updating__container">
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input name="company_name" type="text" placeholder='company name' value={data.company_name || ''} onChange={handleChange} />
+          <input name='company_website' type="text" placeholder='company website link' value={data.company_website || ''} onChange={handleChange} />
+          <label htmlFor="company_image">Company Image</label>
+          <input name='company_image' type="file" onChange={handleChange} />
+          <input name='adverticement_price' type="number" placeholder='advertisement price' value={data.adverticement_price || ''} onChange={handleChange} />
+          <hr />
+          <input name='treasure_task' type='text' placeholder='task' value={data.treasure_task || ''} onChange={handleChange} />
+          <input name='treasure_location' type="text" placeholder='treasure location' value={data.treasure_location || ''} onChange={handleChange} />
+          <label htmlFor="treasure_image">Treasure Image</label>
+          <input name='treasure_image' type="file" onChange={handleChange} />
+          <label htmlFor="winner_image">Winner Image</label>
+          <input name='winner_image' type="file" onChange={handleChange} />
+          <input type="datetime-local" id="targetTime" name="targetTime" required value={data.targetTime || ''} onChange={handleChange} />
+          <label htmlFor="active">Make it AD</label>
+          <select name="active" id="active" value={data.active || 'yes'} onChange={handleChange} required>
+            <option style={optionStyle} value="yes">Yes</option>
+            <option style={optionStyle} value="no">No</option>
+          </select>
+          <label htmlFor="task_over">Is the Task Over?</label>
+          <select name="task_over" id="task_over" value={data.task_over || 'no'} onChange={handleChange} required>
+            <option style={optionStyle} value="yes">Yes</option>
+            <option style={optionStyle} value="no">No</option>
+          </select>
+          <textarea name="content" placeholder='text your message' value={data.content || ''} onChange={handleChange} required></textarea>
+          <button className='btn btn-primary' type="submit" disabled={loading}>
+            {loading ? 'Processing...' : 'Update Document'}
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
 

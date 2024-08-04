@@ -5,6 +5,7 @@ import { fetchAdvertisers } from "../../utils/firebaseUtils";
 import Loading from "../Loading/Loading";
 import Company from "./Company";
 import Gifts from "./Image";
+import Nodata from "../nodata/Nodata"; // Ensure this import is correct
 
 function Mystorybox() {
   const [advertisers, setAdvertisers] = useState([]);
@@ -42,8 +43,14 @@ function Mystorybox() {
       <div className="Mystorybox-inner-container">
         <Navbar />
         <div className="Mystorybox-content-container">
-          <Gifts advertisers={advertisers} />
-          <Company advertisers={advertisers} />
+          {(advertisers.length === 0 || (advertisers[0]?.active === 'yes' && advertisers[0]?.task_over === "yes")) ? (
+            <Nodata /> // Render NoData component when advertisers array is empty or condition is met
+          ) : (
+            <>
+              <Gifts advertisers={advertisers} />
+              <Company advertisers={advertisers} />
+            </>
+          )}
         </div>
       </div>
     </div>

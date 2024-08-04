@@ -167,6 +167,10 @@ flex-direction: column;
     height: auto;
     border-radius: 8px;
   }
+
+  .winner-message{
+    margin-top: 14px;
+  }
   
   /* Insights Container Styles */
   .insights-container {
