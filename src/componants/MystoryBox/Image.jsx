@@ -7,6 +7,7 @@ import Modal from "../modal/Modal";
 import PIC from '../../asset/boy.png';
 
 import useCountdownTimer from "../../hooks/useCountdownTimer";
+import BlurryLoadingImage from "../BlurImageLoader/BlurIMageLoader";
 
 function Gifts({ advertisers }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,7 +58,7 @@ function Gifts({ advertisers }) {
         </p>
 
         <div className="gift-icon">
-          <img className="icon" src={ICON} alt="Gift Icon" />
+          {/* <img className="icon" src={ICON} alt="Gift Icon" /> */}
           <button className="btn btn-primary">
             <a href={advertisers[0]?.treasure_location} onClick={handleLocationClick}>Location</a>
           </button>
@@ -67,11 +68,12 @@ function Gifts({ advertisers }) {
         {modalContent === 'gift' ? (
           isTimeOver && isWinner ? (
             <div>
-              <img src={advertisers[0]?.winner_image } alt="Winner" className="modal-image" />
+              <BlurryLoadingImage src={advertisers[0]?.winner_image} />
               <p className="winner-message">Today's treasure hunt is over! Congratulations to our winner. You can see the winner above.</p>
             </div>
           ) : isTimeOver ? (
-            <img src={"https://static.toiimg.com/photo/msid-88320862,width-96,height-65.cms"} alt="Modal Banner" className="modal-image" />
+            <BlurryLoadingImage src={advertisers[0]?.treasure_image} />
+      
           ) : (
             <div className='countdown-container' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div className="countdown-content">

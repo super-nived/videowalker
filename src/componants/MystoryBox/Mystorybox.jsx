@@ -13,6 +13,8 @@ function Mystorybox() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log(advertisers);
+    
     const loadAdvertisers = async () => {
       setIsLoading(true);
       setError(null);
@@ -37,13 +39,16 @@ function Mystorybox() {
   if (isLoading) {
     return <Loading />;
   }
-
+// this for the condintion rendering 
+// (advertisers[0]?.active === 'yes' && advertisers[0]?.task_over === "yes")
   return (
     <div className="Mystorybox-main-container">
       <div className="Mystorybox-inner-container">
         <Navbar />
         <div className="Mystorybox-content-container">
-          {(advertisers.length === 0 || (advertisers[0]?.active === 'yes' && advertisers[0]?.task_over === "yes")) ? (
+
+
+          {(advertisers.length === 0 ) ? (
             <Nodata /> // Render NoData component when advertisers array is empty or condition is met
           ) : (
             <>
